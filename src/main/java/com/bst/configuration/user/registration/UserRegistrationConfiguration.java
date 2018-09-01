@@ -9,5 +9,5 @@ import org.springframework.context.annotation.ImportResource;
 @ComponentScan({"com.bst.user.registration.components", "com.bst.user.registration.configuration"})
 @ImportResource({"classpath:Aspect.xml"})
 @EnableAspectJAutoProxy
-public class RegistrationLibConfig {
+public class UserRegistrationConfiguration {
 }

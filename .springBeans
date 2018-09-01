@@ -7,7 +7,7 @@
 	</configSuffixes>
 	<enableImports><![CDATA[false]]></enableImports>
 	<configs>
-		<config>java:com.bst.configuration.user.registration.RegistrationLibConfig</config>
+		<config>java:com.bst.configuration.user.registration.UserRegistrationConfiguration</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
