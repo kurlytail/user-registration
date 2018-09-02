@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-	<artifactId>user-registration</artifactId>
-	<version>0.1.0</version>
+    <artifactId>user-registration</artifactId>
+    <name>User Registration library</name>
 
-	<parent>
-		<groupId>com.bst</groupId>
-		<artifactId>spring-deps</artifactId>
-		<version>0.0.1</version>
-	</parent>
+    <parent>
+        <groupId>com.bst</groupId>
+        <artifactId>spring-deps</artifactId>
+        <version>0.0.3-SNAPSHOT</version>
+        <relativePath>../spring-deps</relativePath>
+    </parent>
 
-	<build>
-		<finalName>user-registration</finalName>
-	</build>
-
+    <packaging>jar</packaging>
+    <build>
+        <finalName>user-registration</finalName>
+    </build>
 </project>
