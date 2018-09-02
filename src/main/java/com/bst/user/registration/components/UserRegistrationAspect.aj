@@ -1,23 +1,42 @@
 package com.bst.user.registration.components;
 
-import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.core.env.Environment;
+import org.springframework.mail.MailSender;
+import org.springframework.mail.SimpleMailMessage;
 
 import com.bst.user.registration.entities.RegistrationToken;
 
 public aspect UserRegistrationAspect {
-	
-	private JavaMailSender javaMailSender;
-	
+
+	private MailSender mailSender;
+	private Environment environment;
+
+	public Environment getEnvironment() {
+		return environment;
+	}
+
+	public void setEnvironment(Environment environment) {
+		this.environment = environment;
+	}
+
 	after() returning(RegistrationToken token): 
-		call(* com.bst.user.registration.components.RegistrationController.commitToken(*)) {
-	    System.out.println("Caught!!!!" + token.toString());
+		call(* com.bst.user.registration.components.RegistrationService.commitToken(*)) {
+		SimpleMailMessage message = new SimpleMailMessage();
+		message.setTo(token.getEmail());
+		message.setFrom("automator@brainspeedtech.com");
+		message.setSubject("Continue your registration");
+		message.setText("http://localhost:" + environment.getProperty("local.server.port")
+				+ "/auth/signup-continue?user=" + token.getEmail() + "&hash=" + token.getHash());
+		
+		mailSender.send(message);
 	}
 
-	public JavaMailSender getJavaMailSender() {
-		return javaMailSender;
+	public MailSender getMailSender() {
+		return mailSender;
 	}
 
-	public void setJavaMailSender(JavaMailSender javaMailSender) {
-		this.javaMailSender = javaMailSender;
+	public void setMailSender(MailSender mailSender) {
+		this.mailSender = mailSender;
 	}
+
 }
