@@ -20,7 +20,7 @@ public aspect UserRegistrationAspect {
 		try {
 			emailService.sendMessage(new String[] { token.getEmail() },
 					"auth-signup-confirm", "automator@brainspeedtech.com", "Continue your registration", 
-					token, Locale.ENGLISH);
+					"user", token, Locale.ENGLISH);
 		} catch (MessagingException e) {
 			e.printStackTrace();
 		}
