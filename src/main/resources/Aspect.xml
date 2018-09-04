@@ -7,8 +7,8 @@ http://www.springframework.org/schema/beans http://www.springframework.org/schem
 	<bean id="emailNotifier"
 		class="com.bst.user.registration.components.UserRegistrationAspect"
 		factory-method="aspectOf">
-		<property name="mailSender" ref="mailSender" />
         <property name="environment" ref="environment"/>
+        <property name="emailService" ref="emailService"/>
 	</bean>
 	
 </beans>
