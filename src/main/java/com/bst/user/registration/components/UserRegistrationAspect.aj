@@ -1,15 +1,30 @@
 package com.bst.user.registration.components;
 
+import java.util.Locale;
+
+import javax.mail.MessagingException;
+
 import org.springframework.core.env.Environment;
-import org.springframework.mail.MailSender;
-import org.springframework.mail.SimpleMailMessage;
 
 import com.bst.user.registration.entities.RegistrationToken;
+import com.bst.utility.components.EmailService;
 
 public aspect UserRegistrationAspect {
 
-	private MailSender mailSender;
 	private Environment environment;
+	private EmailService emailService;
+
+	after() returning(RegistrationToken token): 
+		call(* com.bst.user.registration.components.RegistrationService.commitToken(*)) {
+		
+		try {
+			emailService.sendMessage(new String[] { token.getEmail() },
+					"auth-signup-confirm", "automator@brainspeedtech.com", "Continue your registration", 
+					"user", token, Locale.ENGLISH);
+		} catch (MessagingException e) {
+			e.printStackTrace();
+		}
+	}
 
 	public Environment getEnvironment() {
 		return environment;
@@ -18,25 +33,13 @@ public aspect UserRegistrationAspect {
 	public void setEnvironment(Environment environment) {
 		this.environment = environment;
 	}
-
-	after() returning(RegistrationToken token): 
-		call(* com.bst.user.registration.components.RegistrationService.commitToken(*)) {
-		SimpleMailMessage message = new SimpleMailMessage();
-		message.setTo(token.getEmail());
-		message.setFrom("automator@brainspeedtech.com");
-		message.setSubject("Continue your registration");
-		message.setText("http://localhost:" + environment.getProperty("local.server.port")
-				+ "/auth/signup-continue?user=" + token.getEmail() + "&hash=" + token.getHash());
-		
-		mailSender.send(message);
+	
+	public EmailService getEmailService() {
+		return emailService;
 	}
 
-	public MailSender getMailSender() {
-		return mailSender;
-	}
-
-	public void setMailSender(MailSender mailSender) {
-		this.mailSender = mailSender;
+	public void setEmailService(EmailService emailService) {
+		this.emailService = emailService;
 	}
 
 }
