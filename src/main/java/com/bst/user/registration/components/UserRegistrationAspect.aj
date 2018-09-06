@@ -2,8 +2,6 @@ package com.bst.user.registration.components;
 
 import java.util.Locale;
 
-import javax.mail.MessagingException;
-
 import org.springframework.core.env.Environment;
 
 import com.bst.user.registration.entities.RegistrationToken;
@@ -21,7 +19,7 @@ public aspect UserRegistrationAspect {
 			emailService.sendMessage(new String[] { token.getEmail() },
 					"email/auth-signup-confirm", "automator@brainspeedtech.com", "Continue your registration", 
 					"user", token, Locale.ENGLISH);
-		} catch (MessagingException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
