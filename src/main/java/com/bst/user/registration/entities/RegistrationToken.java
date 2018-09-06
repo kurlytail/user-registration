@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.PostLoad;
+import javax.persistence.PostPersist;
 import javax.persistence.Transient;
 
 import org.apache.commons.codec.digest.DigestUtils;
@@ -20,10 +22,16 @@ public class RegistrationToken {
 	private Date createdDate = new Date();
 	@Column(unique = true)
 	private String email;
-
 	@Transient
+	private String hash;
+	@PostLoad
+	@PostPersist
+	public void computeHash() {
+		this.hash = DigestUtils.sha512Hex(getEmail() + getCreatedDate() + getId().toString());
+	}
+	
 	public String getHash() {
-		return DigestUtils.sha512Hex(getEmail() + getCreatedDate() + getId().toString());
+		return this.hash;
 	}
 
 	public RegistrationToken() {
