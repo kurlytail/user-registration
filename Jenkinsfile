@@ -46,7 +46,7 @@ pipeline {
             }
             
             post {
-                success {
+                always{    
                     junit '**/surefire-reports/*.xml' 
                 }
             }
