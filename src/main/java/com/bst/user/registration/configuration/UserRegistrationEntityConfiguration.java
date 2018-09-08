@@ -7,6 +7,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @Configuration
 @EntityScan("com.bst.user.registration.entities")
 @EnableJpaRepositories("com.bst.user.registration.repositories")
-public class EntityConfiguration {
+public class UserRegistrationEntityConfiguration {
 
 }

@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.PostLoad;
 import javax.persistence.PostPersist;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
 import org.apache.commons.codec.digest.DigestUtils;
@@ -19,11 +21,16 @@ public class RegistrationToken {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	
+	@Temporal(TemporalType.DATE)
 	private Date createdDate = new Date();
+	
 	@Column(unique = true)
 	private String email;
+	
 	@Transient
 	private String hash;
+	
 	@PostLoad
 	@PostPersist
 	public void computeHash() {
