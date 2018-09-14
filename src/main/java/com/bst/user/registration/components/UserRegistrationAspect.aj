@@ -14,11 +14,13 @@ public aspect UserRegistrationAspect {
 
 	after() returning(RegistrationToken token): 
 		call(* com.bst.user.registration.components.RegistrationService.commitToken(*)) {
-		
+
 		try {
 			emailService.sendMessage(new String[] { token.getEmail() },
-					"email/auth-signup-confirm", "automator@brainspeedtech.com", "Continue your registration", 
-					"user", token, Locale.ENGLISH);
+					environment.getProperty("bst.email.template.user.registration.signupConfirm",
+							"email/auth-signup-confirm"),
+					environment.getProperty("bst.email.from", "automator@brainspeedtech.com"),
+					"Continue your registration", "user", token, Locale.ENGLISH);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -31,7 +33,7 @@ public aspect UserRegistrationAspect {
 	public void setEnvironment(Environment environment) {
 		this.environment = environment;
 	}
-	
+
 	public EmailService getEmailService() {
 		return emailService;
 	}

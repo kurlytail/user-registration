@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body id="auth-signup">
+	<form th:object="${user}" method="POST" id="user-registration-form"
+		enctype="utf8" th:action="@{/auth/signup-confirm}">
+		<!-- .form-group -->
+		<div>
+			<div>
+				<label th:text="#{label.user.email}">email</label>
+				<input type="email" th:field="*{email}" required autofocus
+					id="user-registration-email" />
+				<p th:each="error : ${#fields.errors('email')}" th:text="${error}">Validation
+					error</p>
+			</div>
+		</div>
+		<div>
+			<button type="submit" id="signup-button">Sign Up</button>
+		</div>
+	</form>
+</body>
+</html>

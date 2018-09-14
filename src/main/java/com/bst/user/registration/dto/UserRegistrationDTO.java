@@ -13,8 +13,6 @@ public class UserRegistrationDTO {
     @NotEmpty
     private String email;
     
-    @NotNull
-    @NotEmpty
     @ValidReCaptcha
     private String reReCaptchaResponse;
 
