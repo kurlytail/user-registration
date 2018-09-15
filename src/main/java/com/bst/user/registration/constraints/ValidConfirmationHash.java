@@ -11,7 +11,8 @@ import java.lang.annotation.Target;
 import javax.validation.Constraint;
 import javax.validation.Payload;
 
-import com.bst.user.registration.validation.ConfirmationHashValidator;
+import com.bst.user.registration.validators.ConfirmationHashValidator;
+
 
 @Documented
 @Constraint(validatedBy = ConfirmationHashValidator.class)

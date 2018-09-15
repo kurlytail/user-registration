@@ -1,4 +1,4 @@
-package com.bst.user.registration.validation;
+package com.bst.user.registration.validators;
 
 import java.lang.reflect.Method;
 

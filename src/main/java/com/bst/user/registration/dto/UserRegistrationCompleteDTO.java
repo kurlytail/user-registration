@@ -6,6 +6,7 @@ import javax.validation.constraints.NotNull;
 
 import com.bst.user.registration.constraints.ValidConfirmationHash;
 
+
 @ValidConfirmationHash
 public class UserRegistrationCompleteDTO {
 

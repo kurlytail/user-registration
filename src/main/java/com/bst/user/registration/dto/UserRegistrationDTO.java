@@ -4,7 +4,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
-import com.bst.user.registration.constraints.ValidReCaptcha;
+import com.bst.utility.constraints.ValidReCaptcha;
 
 public class UserRegistrationDTO {
      

@@ -28,6 +28,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 import com.bst.configuration.user.registration.UserRegistrationConfiguration;
+import com.bst.configuration.utility.UtilityConfiguration;
 import com.bst.user.authentication.components.UserService;
 import com.bst.user.registration.components.UserRegistrationAspect;
 import com.bst.user.registration.entities.RegistrationToken;
@@ -38,7 +39,7 @@ import com.bst.utility.testlib.SnapshotListener;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = { UserRegistrationConfiguration.class, SecurityDisabler.class,
-		ServletInitializer.class, UserRegistrationAspect.class })
+		ServletInitializer.class, UserRegistrationAspect.class, UtilityConfiguration.class })
 @SeleniumTest(driver = ChromeDriver.class)
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 @TestExecutionListeners(listeners = { SnapshotListener.class,
