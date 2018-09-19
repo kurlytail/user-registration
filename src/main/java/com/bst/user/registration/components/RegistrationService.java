@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.bst.user.authentication.components.UserService;
-import com.bst.user.authentication.entities.User;
+import com.bst.user.authentication.entities.Person;
 import com.bst.user.registration.dto.UserRegistrationCompleteDTO;
 import com.bst.user.registration.dto.UserRegistrationDTO;
 import com.bst.user.registration.entities.RegistrationToken;
@@ -43,13 +43,13 @@ public class RegistrationService {
 	}
 
 	@Transactional
-	public User completeRegistration(UserRegistrationCompleteDTO completeDto) {
+	public Person completeRegistration(UserRegistrationCompleteDTO completeDto) {
 		RegistrationToken token = tokenRepository.findByEmail(completeDto.getEmail());
 		if (token == null) {
 			return null;
 		}
 
-		User newUser = userService.createUser(completeDto.getEmail(), completeDto.getName(), completeDto.getPassword());
+		Person newUser = userService.createUser(completeDto.getEmail(), completeDto.getName(), completeDto.getPassword());
 		tokenRepository.delete(token);
 		return newUser;
 	}
