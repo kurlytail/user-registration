@@ -15,7 +15,7 @@
         <dependency>
             <groupId>com.bst</groupId>
             <artifactId>utility-lib</artifactId>
-            <version>0.0.3-SNAPSHOT</version>
+            <version>0.0.10-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>com.bst</groupId>
@@ -107,8 +107,30 @@
         </plugins>
     </build>
 
+    <distributionManagement>
+        <repository>
+            <id>absolute directory</id>
+            <url>file:///data/maven/repo</url>
+        </repository>
+    </distributionManagement>
+
+    <scm>
+        <url>https://www.github.com/kurlytail/user-registration</url>
+        <connection>scm:git:https://www.github.com/kurlytail/user-registration</connection>
+        <developerConnection>scm:git:https://www.github.com/kurlytail/user-registration</developerConnection>
+    </scm>
+
+    <repositories>
+        <repository>
+            <id>bst-repo</id>
+            <name>Brainspeed Technologies Maven Repository</name>
+            <url>http://maven.brainspeedtech.com</url>
+        </repository>
+    </repositories>
+
     <organization>
         <name>Brainspeed Technologies</name>
         <url>www.brainspeedtech.com</url>
     </organization>
+
 </project>
