@@ -15,12 +15,12 @@
         <dependency>
             <groupId>com.bst</groupId>
             <artifactId>utility-lib</artifactId>
-            <version>0.0.15-SNAPSHOT</version>
+            <version>[0.0.18-SNAPSHOT,)</version>
         </dependency>
         <dependency>
             <groupId>com.bst</groupId>
             <artifactId>user-authentication</artifactId>
-            <version>0.0.8-SNAPSHOT</version>
+            <version>[0.0.9-SNAPSHOT,)</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -138,9 +138,9 @@
             <url>https://repo.maven.apache.org/maven2/</url>
         </repository>
         <repository>
-            <id>maven-scp</id>
+            <id>bst-repo</id>
             <name>Brainspeed Technologies Maven Repository</name>
-            <url>scp://maven@maven.brainspeedtech.com/data/maven/repo</url>
+            <url>http://maven.brainspeedtech.com/</url>
         </repository>
     </repositories>
 
