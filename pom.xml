@@ -84,6 +84,7 @@
                 <configuration>
                     <showWeaveInfo>true</showWeaveInfo>
                     <forceAjcCompile>true</forceAjcCompile>
+                    <sources />
                     <source>${java.version}</source>
                     <target>${java.version}</target>
                     <Xlint>ignore</Xlint>
@@ -97,9 +98,10 @@
                 </configuration>
                 <executions>
                     <execution>
+                        <phase>process-classes</phase>
+                        <id>aspectj-compile</id>
                         <goals>
                             <goal>compile</goal>
-                            <goal>test-compile</goal>
                         </goals>
                     </execution>
                 </executions>
