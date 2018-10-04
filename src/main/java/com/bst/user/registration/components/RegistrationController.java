@@ -1,7 +1,10 @@
 package com.bst.user.registration.components;
 
+import java.util.Locale;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -15,6 +18,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.bst.user.registration.dto.UserConfirmationDTO;
 import com.bst.user.registration.dto.UserRegistrationCompleteDTO;
 import com.bst.user.registration.dto.UserRegistrationDTO;
+import com.bst.user.registration.entities.RegistrationToken;
+import com.bst.utility.components.EmailService;
 
 @Controller
 public class RegistrationController {
@@ -33,6 +38,12 @@ public class RegistrationController {
 
 	@Value("${bst.template.user.registration.signin:auth-signin}")
 	private String authSigninTemplate;
+	
+	@Autowired
+	private Environment environment;
+	
+	@Autowired
+	private EmailService emailService;
 
 	@RequestMapping(value = "${bst.uri.user.registration.signup:/auth/signup}", method = RequestMethod.GET)
 	public String showRegistrationForm(WebRequest request, Model model) {
@@ -49,7 +60,17 @@ public class RegistrationController {
 			return authSignupTemplate;
 		}
 
-		registrationService.commitToken(accountDto);
+		RegistrationToken token = registrationService.commitToken(accountDto);
+		
+		try {
+			emailService.sendMessage(new String[] { token.getEmail() },
+					environment.getProperty("bst.email.template.user.registration.signupConfirm",
+							"email/auth-signup-confirm"),
+					environment.getProperty("bst.email.from", "automator@brainspeedtech.com"),
+					"Continue your registration", "user", token, Locale.ENGLISH);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
 		return authSignupConfirmTemplate;
 	}

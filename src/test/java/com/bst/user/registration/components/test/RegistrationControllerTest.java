@@ -7,9 +7,9 @@ import static org.mockito.Mockito.verify;
 
 import java.util.concurrent.TimeUnit;
 
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -22,24 +22,23 @@ import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestExecutionListeners;
 import org.springframework.test.context.TestExecutionListeners.MergeMode;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.context.TestPropertySource;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 import com.bst.configuration.user.registration.UserRegistrationConfiguration;
 import com.bst.configuration.utility.UtilityConfiguration;
 import com.bst.user.authentication.components.UserService;
-import com.bst.user.registration.components.UserRegistrationAspect;
 import com.bst.user.registration.entities.RegistrationToken;
 import com.bst.utility.components.EmailService;
 import com.bst.utility.testlib.SeleniumTest;
 import com.bst.utility.testlib.SeleniumTestExecutionListener;
 import com.bst.utility.testlib.SnapshotListener;
 
-@RunWith(SpringJUnit4ClassRunner.class)
+@ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes = { UserRegistrationConfiguration.class, SecurityDisabler.class,
-		ServletInitializer.class, UserRegistrationAspect.class, UtilityConfiguration.class })
+		ServletInitializer.class, UtilityConfiguration.class })
 @SeleniumTest(driver = ChromeDriver.class)
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 @TestExecutionListeners(listeners = { SnapshotListener.class,
@@ -62,7 +61,7 @@ public class RegistrationControllerTest {
 	@Autowired
 	private WebApplicationContext context;
 
-	@Before
+	@BeforeEach
 	public void setup() {
 		MockMvcBuilders.webAppContextSetup(context).build();
 	}
