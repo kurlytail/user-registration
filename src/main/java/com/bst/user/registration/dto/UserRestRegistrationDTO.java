@@ -6,7 +6,7 @@ import javax.validation.constraints.NotNull;
 
 import com.bst.utility.constraints.ValidReCaptcha;
 
-public class UserRegistrationDTO {
+public class UserRestRegistrationDTO {
 
 	@Email
 	@NotNull

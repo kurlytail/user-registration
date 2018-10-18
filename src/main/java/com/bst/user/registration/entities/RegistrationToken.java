@@ -16,7 +16,6 @@ import javax.persistence.Transient;
 import org.apache.commons.codec.digest.DigestUtils;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
@@ -25,19 +24,15 @@ public class RegistrationToken {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@JsonIgnore
 	private Long id;
 
 	@Temporal(TemporalType.DATE)
-	@JsonIgnore
 	private final Date createdDate = new Date();
 
 	@Column(unique = true)
-	@JsonIgnore
 	private final String email;
 
 	@Transient
-	@JsonIgnore
 	private String hash;
 
 	public RegistrationToken() {
