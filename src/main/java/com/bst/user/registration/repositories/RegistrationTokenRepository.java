@@ -8,9 +8,13 @@ import com.bst.user.registration.entities.RegistrationToken;
 @PreAuthorize("hasRole('ADMIN')")
 public interface RegistrationTokenRepository extends CrudRepository<RegistrationToken, Long> {
 	@Override
-	@PreAuthorize("hasRole('USER')")
-	public <S extends RegistrationToken> S save(S s);
-	
-	@PreAuthorize("hasRole('USER')")
+	@PreAuthorize("hasRole('ROLE_ANONYMOUS')")
+	public void delete(RegistrationToken entity);
+
+	@PreAuthorize("hasRole('ROLE_ANONYMOUS')")
 	public RegistrationToken findByEmail(String email);
+
+	@Override
+	@PreAuthorize("hasRole('ROLE_ANONYMOUS')")
+	public <S extends RegistrationToken> S save(S s);
 }
