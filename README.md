@@ -10,6 +10,12 @@ Uses EmailService to send templated registration confirmation emails
 #### bst.template.user.registration.signup
 Default value: auth-signup
 
+Form variables:
+email
+reReCaptchaResponse (if captcha is enabled (#bst.user.captchaDisable))
+
+Served from: (#bst.uri.user.registration.signup)
+
 #### bst.template.user.registration.signupConfirm
 Default value: auth-signup-confirm
 
@@ -32,6 +38,7 @@ Default value: /auth/signup-confirm
 
 #### bst.uri.user.registration.signup
 Default value: /auth/signup
+Serves: (#bst.template.user.registration.signup)
 
 ### Email templates
 
@@ -55,5 +62,9 @@ spring.mail.properties.mail.smtp.auth=true
 spring.mail.properties.mail.smtp.starttls.enable=true
 spring.mail.properties.mail.smtp.timeout=8000
 
+### Other settings
 
+#### bst.user.captchaDisable
+Default value: false
+Verify google captcha response
 
