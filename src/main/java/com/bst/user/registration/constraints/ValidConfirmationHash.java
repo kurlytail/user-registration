@@ -13,16 +13,15 @@ import javax.validation.Payload;
 
 import com.bst.user.registration.validators.ConfirmationHashValidator;
 
-
 @Documented
 @Constraint(validatedBy = ConfirmationHashValidator.class)
 @Target({ TYPE, ANNOTATION_TYPE })
 @Retention(RUNTIME)
 public @interface ValidConfirmationHash {
 
-    String message() default "Invalid Credentials";
+	Class<?>[] groups() default {};
 
-    Class<?>[] groups() default {};
+	String message() default "Invalid Credentials";
 
-    Class<? extends Payload>[] payload() default {};
+	Class<? extends Payload>[] payload() default {};
 }

@@ -7,7 +7,7 @@
     <artifactId>user-registration</artifactId>
     <name>User Registration library</name>
     <groupId>com.bst</groupId>
-    <version>0.0.3-SNAPSHOT</version>
+    <version>0.0.9-SNAPSHOT</version>
 
     <packaging>jar</packaging>
 

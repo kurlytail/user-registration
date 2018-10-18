@@ -26,31 +26,32 @@ public class RegistrationService {
 	private UserService userService;
 
 	@Transactional
-	public RegistrationToken commitToken(UserRegistrationDTO accountDto) {
+	public RegistrationToken commitToken(final UserRegistrationDTO accountDto) {
 
-		RegistrationToken oldToken = tokenRepository.findByEmail(accountDto.getEmail());
+		final RegistrationToken oldToken = this.tokenRepository.findByEmail(accountDto.getEmail());
 		if (oldToken != null) {
-			tokenRepository.delete(oldToken);
-			entityManager.flush();
+			this.tokenRepository.delete(oldToken);
+			this.entityManager.flush();
 		}
 
-		RegistrationToken token = new RegistrationToken(accountDto.getEmail());
-		tokenRepository.save(token);
-		entityManager.flush();
-		entityManager.refresh(token);
+		final RegistrationToken token = new RegistrationToken(accountDto.getEmail());
+		this.tokenRepository.save(token);
+		this.entityManager.flush();
+		this.entityManager.refresh(token);
 
 		return token;
 	}
 
 	@Transactional
-	public Person completeRegistration(UserRegistrationCompleteDTO completeDto) {
-		RegistrationToken token = tokenRepository.findByEmail(completeDto.getEmail());
+	public Person completeRegistration(final UserRegistrationCompleteDTO completeDto) {
+		final RegistrationToken token = this.tokenRepository.findByEmail(completeDto.getEmail());
 		if (token == null) {
 			return null;
 		}
 
-		Person newUser = userService.createUser(completeDto.getEmail(), completeDto.getName(), completeDto.getPassword());
-		tokenRepository.delete(token);
+		final Person newUser = this.userService.createUser(completeDto.getEmail(), completeDto.getName(),
+				completeDto.getPassword());
+		this.tokenRepository.delete(token);
 		return newUser;
 	}
 }

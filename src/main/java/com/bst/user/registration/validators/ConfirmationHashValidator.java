@@ -17,28 +17,30 @@ public class ConfirmationHashValidator implements ConstraintValidator<ValidConfi
 	private RegistrationTokenRepository tokenRepository;
 
 	@Override
-	public void initialize(ValidConfirmationHash constraintAnnotation) {
+	public void initialize(final ValidConfirmationHash constraintAnnotation) {
 	}
 
 	@Override
-	public boolean isValid(Object dto, ConstraintValidatorContext context) {
-		
+	public boolean isValid(final Object dto, final ConstraintValidatorContext context) {
+
 		String dtoEmail;
 		String dtoHash;
-		
+
 		try {
-			Method getEmailMethod = dto.getClass().getMethod("getEmail");
-			Method getHashMethod = dto.getClass().getMethod("getHash");
-			
+			final Method getEmailMethod = dto.getClass().getMethod("getEmail");
+			final Method getHashMethod = dto.getClass().getMethod("getHash");
+
 			dtoEmail = (String) getEmailMethod.invoke(dto);
 			dtoHash = (String) getHashMethod.invoke(dto);
-		} catch (Exception e) {
+		} catch (final Exception e) {
 			e.printStackTrace();
 			return false;
 		}
-		
-		RegistrationToken token = tokenRepository.findByEmail(dtoEmail);
-		if (token == null) return false;
+
+		final RegistrationToken token = this.tokenRepository.findByEmail(dtoEmail);
+		if (token == null) {
+			return false;
+		}
 		return token.getHash().equals(dtoHash);
 	}
 

@@ -6,7 +6,6 @@ import javax.validation.constraints.NotNull;
 
 import com.bst.user.registration.constraints.ValidConfirmationHash;
 
-
 @ValidConfirmationHash
 public class UserRegistrationCompleteDTO {
 
@@ -14,7 +13,7 @@ public class UserRegistrationCompleteDTO {
 	@NotNull
 	@NotEmpty
 	private String email;
-	
+
 	@NotNull
 	@NotEmpty
 	private String name;
@@ -22,52 +21,52 @@ public class UserRegistrationCompleteDTO {
 	@NotNull
 	@NotEmpty
 	private String password;
-	
+
 	@NotNull
 	@NotEmpty
 	private String confirmPassword;
-	
+
 	@NotNull
 	@NotEmpty
 	private String hash;
 
-	public String getHash() {
-		return hash;
-	}
-
-	public void setHash(String hash) {
-		this.hash = hash;
+	public String getConfirmPassword() {
+		return this.confirmPassword;
 	}
 
 	public String getEmail() {
-		return email;
+		return this.email;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public String getHash() {
+		return this.hash;
 	}
 
 	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
+		return this.name;
 	}
 
 	public String getPassword() {
-		return password;
+		return this.password;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public String getConfirmPassword() {
-		return confirmPassword;
-	}
-
-	public void setConfirmPassword(String confirmPassword) {
+	public void setConfirmPassword(final String confirmPassword) {
 		this.confirmPassword = confirmPassword;
+	}
+
+	public void setEmail(final String email) {
+		this.email = email;
+	}
+
+	public void setHash(final String hash) {
+		this.hash = hash;
+	}
+
+	public void setName(final String name) {
+		this.name = name;
+	}
+
+	public void setPassword(final String password) {
+		this.password = password;
 	}
 }

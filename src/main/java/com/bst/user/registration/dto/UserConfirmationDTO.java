@@ -7,7 +7,6 @@ import javax.validation.constraints.NotNull;
 
 import com.bst.user.registration.constraints.ValidConfirmationHash;
 
-
 @ValidConfirmationHash
 public class UserConfirmationDTO {
 
@@ -20,20 +19,20 @@ public class UserConfirmationDTO {
 	@NotEmpty
 	private String hash;
 
-	public String getHash() {
-		return hash;
-	}
-
-	public void setHash(String hash) {
-		this.hash = hash;
-	}
-
 	public String getEmail() {
-		return email;
+		return this.email;
 	}
 
-	public void setEmail(String email) {
+	public String getHash() {
+		return this.hash;
+	}
+
+	public void setEmail(final String email) {
 		this.email = email;
+	}
+
+	public void setHash(final String hash) {
+		this.hash = hash;
 	}
 
 }

@@ -15,49 +15,94 @@ import javax.persistence.Transient;
 
 import org.apache.commons.codec.digest.DigestUtils;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 @Entity
 public class RegistrationToken {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@JsonIgnore
 	private Long id;
-	
+
 	@Temporal(TemporalType.DATE)
-	private Date createdDate = new Date();
-	
+	@JsonIgnore
+	private final Date createdDate = new Date();
+
 	@Column(unique = true)
-	private String email;
-	
+	@JsonIgnore
+	private final String email;
+
 	@Transient
+	@JsonIgnore
 	private String hash;
-	
-	@PostLoad
-	@PostPersist
-	public void computeHash() {
-		this.hash = DigestUtils.sha512Hex(getEmail() + getCreatedDate() + getId().toString());
-	}
-	
-	public String getHash() {
-		return this.hash;
-	}
 
 	public RegistrationToken() {
 		this.email = null;
 	}
 
-	public RegistrationToken(String email) {
+	public RegistrationToken(final String email) {
 		this.email = email;
 	}
 
-	public Long getId() {
-		return id;
+	@PostLoad
+	@PostPersist
+	public void computeHash() {
+		this.hash = DigestUtils.sha512Hex(this.getEmail() + this.getCreatedDate() + this.getId().toString());
+	}
+
+	@Override
+	public boolean equals(final Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null) {
+			return false;
+		}
+		if (this.getClass() != obj.getClass()) {
+			return false;
+		}
+		final RegistrationToken other = (RegistrationToken) obj;
+		if (this.email == null) {
+			if (other.email != null) {
+				return false;
+			}
+		} else if (!this.email.equals(other.email)) {
+			return false;
+		}
+		return true;
 	}
 
 	public Date getCreatedDate() {
-		return createdDate;
+		return this.createdDate;
 	}
 
 	public String getEmail() {
-		return email;
+		return this.email;
+	}
+
+	public String getHash() {
+		return this.hash;
+	}
+
+	public Long getId() {
+		return this.id;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((this.email == null) ? 0 : this.email.hashCode());
+		return result;
+	}
+
+	@Override
+	public String toString() {
+		return "RegistrationToken [id=" + this.id + ", createdDate=" + this.createdDate + ", email=" + this.email
+				+ ", hash=" + this.hash + "]";
 	}
 }
