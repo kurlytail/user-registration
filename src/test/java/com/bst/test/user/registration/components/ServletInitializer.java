@@ -1,4 +1,4 @@
-package com.bst.user.registration.components.test;
+package com.bst.test.user.registration.components;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

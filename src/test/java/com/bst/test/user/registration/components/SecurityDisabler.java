@@ -1,4 +1,4 @@
-package com.bst.user.registration.components.test;
+package com.bst.test.user.registration.components;
 
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
