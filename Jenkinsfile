@@ -30,7 +30,7 @@ pipeline {
                 sh 'rm -rf *'
      
                 checkout scm
-                withmaven {
+                withMaven {
 	                sh '/usr/local/bin/mvn --batch-mode release:update-versions -DautoVersionSubmodules=true -DdevelopmentVersion=$MAVEN_VERSION_NUMBER'
 	                sh '/usr/local/bin/mvn -s settings.xml deploy' 
                 }
