@@ -8,6 +8,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bst.user.registration.dto.UserRegistrationCompleteDTO;
@@ -44,7 +45,7 @@ public class RegistrationRestController {
 	}
 
 	@PostMapping
-	public void newUserRegistration(final @Validated UserRegistrationDTO userDTO) throws Exception {
+	public void newUserRegistration(final @Validated @RequestBody UserRegistrationDTO userDTO) throws Exception {
 		final RegistrationToken token = this.registrationService.commitToken(userDTO);
 		this.emailService.sendMessage(new String[] { token.getEmail() },
 				this.environment.getProperty("bst.email.template.user.registration.signupConfirm",

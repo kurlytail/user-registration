@@ -14,23 +14,21 @@ import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.env.Environment;
-import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestExecutionListeners;
 import org.springframework.test.context.TestExecutionListeners.MergeMode;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-import org.springframework.validation.beanvalidation.MethodValidationPostProcessor;
 
 import com.bst.test.user.registration.TestAppConfiguration;
 import com.bst.user.registration.components.RegistrationRestController;
 import com.bst.user.registration.components.RegistrationService;
 import com.bst.user.registration.dto.UserRegistrationCompleteDTO;
 import com.bst.user.registration.dto.UserRegistrationDTO;
+import com.bst.user.registration.entities.RegistrationToken;
 import com.bst.utility.configuration.CaptchaSettings;
 import com.bst.utility.services.EmailService;
 import com.bst.utility.services.ReCaptchaService;
 import com.bst.utility.testlib.SnapshotListener;
-import com.bst.user.registration.entities.RegistrationToken;
 
 @ExtendWith(SpringExtension.class)
 @TestExecutionListeners(listeners = SnapshotListener.class, mergeMode = MergeMode.MERGE_WITH_DEFAULTS)
