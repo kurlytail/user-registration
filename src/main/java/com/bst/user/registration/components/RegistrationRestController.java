@@ -15,13 +15,9 @@ import com.bst.user.registration.dto.UserRegistrationDTO;
 import com.bst.user.registration.entities.RegistrationToken;
 import com.bst.utility.configuration.CaptchaSettings;
 import com.bst.utility.services.EmailService;
-import com.bst.utility.services.ReCaptchaService;
 
 @RestController("/registration")
 public class RegistrationRestController {
-
-	@Autowired
-	private ReCaptchaService captchaService;
 
 	@Autowired
 	private RegistrationService registrationService;
