@@ -14,7 +14,7 @@ public class UserRegistrationDTO {
 	private String email;
 
 	@ValidReCaptcha
-	private String reReCaptchaResponse;
+	private String reCaptchaResponse;
 
 	private String captchaKey;
 
@@ -27,7 +27,7 @@ public class UserRegistrationDTO {
 	}
 
 	public String getReCaptchaResponse() {
-		return this.reReCaptchaResponse;
+		return this.reCaptchaResponse;
 	}
 
 	public void setCaptchaKey(final String captchaKey) {
@@ -39,12 +39,12 @@ public class UserRegistrationDTO {
 	}
 
 	public void setReCaptchaResponse(final String reReCaptchaResponse) {
-		this.reReCaptchaResponse = reReCaptchaResponse;
+		this.reCaptchaResponse = reReCaptchaResponse;
 	}
 
 	@Override
 	public String toString() {
-		return "UserRegistrationDTO [email=" + this.email + ", reReCaptchaResponse=" + this.reReCaptchaResponse + "]";
+		return "UserRegistrationDTO [email=" + this.email + ", reReCaptchaResponse=" + this.reCaptchaResponse + "]";
 	}
 
 }
