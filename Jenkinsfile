@@ -62,6 +62,7 @@ pipeline {
 	                    reportFiles: 'index.html',
 	                    reportName: 'Coverage Report'
 	                ]
+	                junit 'test-report.xml'
 	                sh 'npm run build'
 	                sh 'npm publish'
                 }
