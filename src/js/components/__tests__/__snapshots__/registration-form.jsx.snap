@@ -1,0 +1,643 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`# registration-form ## constructor ### should create default object 1`] = `
+<form
+  className="auth-form"
+  encType="utf8"
+  id="user-registration-form"
+  method="POST"
+>
+  <div
+    className="form-group"
+  >
+    <div
+      className="form-label-group"
+    >
+      <label>
+        email
+      </label>
+      <input
+        autoFocus={true}
+        className="form-control"
+        id="user-registration-email"
+        onChange={[Function]}
+        required={true}
+        type="email"
+      />
+    </div>
+  </div>
+  <div
+    className="form-group"
+  >
+    <div />
+  </div>
+  <div
+    className="form-group"
+  >
+    <button
+      className="btn btn-lg btn-primary btn-block"
+      disabled={true}
+      id="signup-button"
+      onClick={[Function]}
+      type="submit"
+    >
+      Sign Up
+    </button>
+  </div>
+</form>
+`;
+
+exports[`# registration-form ## render ### render submit methods 1`] = `
+<form
+  className="auth-form"
+  encType="utf8"
+  id="user-registration-form"
+  method="POST"
+>
+  <div
+    className="form-group"
+  >
+    <div
+      className="form-label-group"
+    >
+      <label>
+        email
+      </label>
+      <input
+        autoFocus={true}
+        className="form-control"
+        id="user-registration-email"
+        onChange={[Function]}
+        required={true}
+        type="email"
+      />
+    </div>
+  </div>
+  <div
+    className="form-group"
+  />
+  <div
+    className="form-group"
+  >
+    <button
+      className="btn btn-lg btn-primary btn-block"
+      disabled={true}
+      id="signup-button"
+      onClick={[Function]}
+      type="submit"
+    >
+      Sign Up
+    </button>
+  </div>
+</form>
+`;
+
+exports[`# registration-form ## render ### render with different states 1`] = `
+<form
+  className="auth-form"
+  encType="utf8"
+  id="user-registration-form"
+  method="POST"
+>
+  <div
+    className="form-group"
+  >
+    <div
+      className="form-label-group"
+    >
+      <label>
+        email
+      </label>
+      <input
+        autoFocus={true}
+        className="form-control"
+        id="user-registration-email"
+        onChange={[Function]}
+        required={true}
+        type="email"
+      />
+    </div>
+  </div>
+  <div
+    className="form-group"
+  >
+    <div />
+  </div>
+  <div
+    className="form-group"
+  >
+    <button
+      className="btn btn-lg btn-primary btn-block"
+      disabled={true}
+      id="signup-button"
+      onClick={[Function]}
+      type="submit"
+    >
+      Sign Up
+    </button>
+  </div>
+</form>
+`;
+
+exports[`# registration-form ## render ### render with different states 2`] = `
+<form
+  className="auth-form"
+  encType="utf8"
+  id="user-registration-form"
+  method="POST"
+>
+  <div
+    className="form-group"
+  >
+    <div
+      className="form-label-group"
+    >
+      <label>
+        email
+      </label>
+      <input
+        autoFocus={true}
+        className="form-control"
+        id="user-registration-email"
+        onChange={[Function]}
+        required={true}
+        type="email"
+      />
+    </div>
+  </div>
+  <div
+    className="form-group"
+  >
+    <div />
+  </div>
+  <div
+    className="form-group"
+  >
+    <button
+      className="btn btn-lg btn-primary btn-block"
+      disabled={true}
+      id="signup-button"
+      onClick={[Function]}
+      type="submit"
+    >
+      Sign Up
+    </button>
+  </div>
+</form>
+`;
+
+exports[`# registration-form ## render ### render with different states 3`] = `
+<form
+  className="auth-form"
+  encType="utf8"
+  id="user-registration-form"
+  method="POST"
+>
+  <div
+    className="form-group"
+  >
+    <div
+      className="form-label-group"
+    >
+      <label>
+        email
+      </label>
+      <input
+        autoFocus={true}
+        className="form-control"
+        id="user-registration-email"
+        onChange={[Function]}
+        required={true}
+        type="email"
+      />
+    </div>
+  </div>
+  <div
+    className="form-group"
+  >
+    <div />
+  </div>
+  <div
+    className="form-group"
+  >
+    <button
+      className="btn btn-lg btn-primary btn-block"
+      disabled={true}
+      id="signup-button"
+      onClick={[Function]}
+      type="submit"
+    >
+      Sign Up
+    </button>
+  </div>
+</form>
+`;
+
+exports[`# registration-form ## render ### render with different states 4`] = `
+<form
+  className="auth-form"
+  encType="utf8"
+  id="user-registration-form"
+  method="POST"
+>
+  <div
+    className="form-group"
+  >
+    <div
+      className="form-label-group"
+    >
+      <label>
+        email
+      </label>
+      <input
+        autoFocus={true}
+        className="form-control"
+        id="user-registration-email"
+        onChange={[Function]}
+        required={true}
+        type="email"
+      />
+    </div>
+  </div>
+  <div
+    className="form-group"
+  >
+    <div />
+  </div>
+  <div
+    className="form-group"
+  >
+    <button
+      className="btn btn-lg btn-primary btn-block"
+      disabled={true}
+      id="signup-button"
+      onClick={[Function]}
+      type="submit"
+    >
+      Sign Up
+    </button>
+  </div>
+</form>
+`;
+
+exports[`# registration-form ## render ### render with different states 5`] = `
+<form
+  className="auth-form"
+  encType="utf8"
+  id="user-registration-form"
+  method="POST"
+>
+  <div
+    className="form-group"
+  >
+    <div
+      className="form-label-group"
+    >
+      <label>
+        email
+      </label>
+      <input
+        autoFocus={true}
+        className="form-control"
+        id="user-registration-email"
+        onChange={[Function]}
+        required={true}
+        type="email"
+      />
+    </div>
+  </div>
+  <div
+    className="form-group"
+  >
+    <div />
+  </div>
+  <div
+    className="form-group"
+  >
+    <button
+      className="btn btn-lg btn-primary btn-block"
+      disabled={true}
+      id="signup-button"
+      onClick={[Function]}
+      type="submit"
+    >
+      Sign Up
+    </button>
+  </div>
+</form>
+`;
+
+exports[`# registration-form ## render ### render with form methods 1`] = `
+<form
+  className="auth-form"
+  encType="utf8"
+  id="user-registration-form"
+  method="POST"
+>
+  <div
+    className="form-group"
+  >
+    <div
+      className="form-label-group"
+    >
+      <label>
+        email
+      </label>
+      <input
+        autoFocus={true}
+        className="form-control"
+        id="user-registration-email"
+        onChange={[Function]}
+        required={true}
+        type="email"
+      />
+    </div>
+  </div>
+  <div
+    className="form-group"
+  />
+  <div
+    className="form-group"
+  >
+    <button
+      className="btn btn-lg btn-primary btn-block"
+      disabled={true}
+      id="signup-button"
+      onClick={[Function]}
+      type="submit"
+    >
+      Sign Up
+    </button>
+  </div>
+</form>
+`;
+
+exports[`# registration-form ## render ### render with form methods 2`] = `
+<form
+  className="auth-form"
+  encType="utf8"
+  id="user-registration-form"
+  method="POST"
+>
+  <div
+    className="form-group"
+  >
+    <div
+      className="form-label-group"
+    >
+      <label>
+        email
+      </label>
+      <input
+        autoFocus={true}
+        className="form-control"
+        id="user-registration-email"
+        onChange={[Function]}
+        required={true}
+        type="email"
+      />
+    </div>
+  </div>
+  <div
+    className="form-group"
+  />
+  <div
+    className="form-group"
+  >
+    <button
+      className="btn btn-lg btn-primary btn-block"
+      disabled={false}
+      id="signup-button"
+      onClick={[Function]}
+      type="submit"
+    >
+      Sign Up
+    </button>
+  </div>
+</form>
+`;
+
+exports[`# registration-form ## render ### render with form methods 3`] = `
+<form
+  className="auth-form"
+  encType="utf8"
+  id="user-registration-form"
+  method="POST"
+>
+  <div
+    className="form-group"
+  >
+    <div
+      className="form-label-group"
+    >
+      <label>
+        email
+      </label>
+      <input
+        autoFocus={true}
+        className="form-control"
+        id="user-registration-email"
+        onChange={[Function]}
+        required={true}
+        type="email"
+      />
+    </div>
+  </div>
+  <div
+    className="form-group"
+  />
+  <div
+    className="form-group"
+  >
+    <button
+      className="btn btn-lg btn-primary btn-block"
+      disabled={true}
+      id="signup-button"
+      onClick={[Function]}
+      type="submit"
+    >
+      Sign Up
+    </button>
+  </div>
+</form>
+`;
+
+exports[`# registration-form ## render ### render with form methods 4`] = `
+<form
+  className="auth-form"
+  encType="utf8"
+  id="user-registration-form"
+  method="POST"
+>
+  <div
+    className="form-group"
+  >
+    <div
+      className="form-label-group"
+    >
+      <label>
+        email
+      </label>
+      <input
+        autoFocus={true}
+        className="form-control"
+        id="user-registration-email"
+        onChange={[Function]}
+        required={true}
+        type="email"
+      />
+    </div>
+  </div>
+  <div
+    className="form-group"
+  />
+  <div
+    className="form-group"
+  >
+    <button
+      className="btn btn-lg btn-primary btn-block"
+      disabled={false}
+      id="signup-button"
+      onClick={[Function]}
+      type="submit"
+    >
+      Sign Up
+    </button>
+  </div>
+</form>
+`;
+
+exports[`# registration-form ## render ### render with form methods 5`] = `
+<form
+  className="auth-form"
+  encType="utf8"
+  id="user-registration-form"
+  method="POST"
+>
+  <div
+    className="form-group"
+  >
+    <div
+      className="form-label-group"
+    >
+      <label>
+        email
+      </label>
+      <input
+        autoFocus={true}
+        className="form-control"
+        id="user-registration-email"
+        onChange={[Function]}
+        required={true}
+        type="email"
+      />
+    </div>
+  </div>
+  <div
+    className="form-group"
+  />
+  <div
+    className="form-group"
+  >
+    <button
+      className="btn btn-lg btn-primary btn-block"
+      disabled={true}
+      id="signup-button"
+      onClick={[Function]}
+      type="submit"
+    >
+      Sign Up
+    </button>
+  </div>
+</form>
+`;
+
+exports[`# registration-form ## render ### render with form methods 6`] = `
+<form
+  className="auth-form"
+  encType="utf8"
+  id="user-registration-form"
+  method="POST"
+>
+  <div
+    className="form-group"
+  >
+    <div
+      className="form-label-group"
+    >
+      <label>
+        email
+      </label>
+      <input
+        autoFocus={true}
+        className="form-control"
+        id="user-registration-email"
+        onChange={[Function]}
+        required={true}
+        type="email"
+      />
+    </div>
+  </div>
+  <div
+    className="form-group"
+  />
+  <div
+    className="form-group"
+  >
+    <button
+      className="btn btn-lg btn-primary btn-block"
+      disabled={true}
+      id="signup-button"
+      onClick={[Function]}
+      type="submit"
+    >
+      Sign Up
+    </button>
+  </div>
+</form>
+`;
+
+exports[`# registration-form ## render ### render with stable states 1`] = `
+<form
+  className="auth-form"
+  encType="utf8"
+  id="user-registration-form"
+  method="POST"
+>
+  <div
+    className="form-group"
+  >
+    <div
+      className="form-label-group"
+    >
+      <label>
+        email
+      </label>
+      <input
+        autoFocus={true}
+        className="form-control"
+        id="user-registration-email"
+        onChange={[Function]}
+        required={true}
+        type="email"
+      />
+    </div>
+  </div>
+  <div
+    className="form-group"
+  />
+  <div
+    className="form-group"
+  >
+    <button
+      className="btn btn-lg btn-primary btn-block"
+      disabled={true}
+      id="signup-button"
+      onClick={[Function]}
+      type="submit"
+    >
+      Sign Up
+    </button>
+  </div>
+</form>
+`;
