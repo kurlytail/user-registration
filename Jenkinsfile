@@ -17,11 +17,13 @@ pipeline {
                 script {
                     loadLibrary()
                     env['MAVEN_VERSION_NUMBER'] = getMavenVersion 'kurlytail/user-registration/master', params.BUILD_VERSION_PREFIX, params.BUILDS_OFFSET
+                    env['NPM_VERSION_NUMBER'] = getNpmVersion 'kurlytail/user-registration/master', params.BUILD_VERSION_PREFIX, params.BUILDS_OFFSET
+                    currentBuild.displayName = env['MAVEN_VERSION_NUMBER']
                 }
             }
         }
         
-        stage ('Build') {
+        stage ('Maven Build') {
             agent {
                 label 'mvn'
             }
@@ -34,6 +36,35 @@ pipeline {
 	                sh '/usr/local/bin/mvn --batch-mode release:update-versions -DautoVersionSubmodules=true -DdevelopmentVersion=$MAVEN_VERSION_NUMBER'
 	                sh '/usr/local/bin/mvn -s settings.xml deploy' 
                 }
+            }
+        }
+
+        stage ('NPM Build') {
+            agent {
+                label 'node-build'
+            }
+            
+            steps {
+                sh 'rm -rf *'
+     
+                checkout scm
+
+                sh 'npm install'
+                sh 'npm version $NPM_VERSION_NUMBER'
+                sh 'npm run lint'
+                sh 'npm run test'
+
+                publishHTML target: [
+                    allowMissing: false,
+                    alwaysLinkToLastBuild: false,
+                    keepAll: true,
+                    reportDir: 'coverage',
+                    reportFiles: 'index.html',
+                    reportName: 'Coverage Report'
+                ]
+
+                sh 'npm run build'
+                sh 'npm publish'
             }
         }
     }
