@@ -53,19 +53,19 @@ pipeline {
 	                sh 'npm install'
 	                sh 'npm version $NPM_VERSION_NUMBER'
 	                sh 'npm run lint'
-	                sh 'npm run test'
+	                sh 'npm run test'           
+	                publishHTML target: [
+	                    allowMissing: false,
+	                    alwaysLinkToLastBuild: false,
+	                    keepAll: true,
+	                    reportDir: 'coverage',
+	                    reportFiles: 'index.html',
+	                    reportName: 'Coverage Report'
+	                ]
 	                sh 'npm run build'
 	                sh 'npm publish'
                 }
-                
-                publishHTML target: [
-                    allowMissing: false,
-                    alwaysLinkToLastBuild: false,
-                    keepAll: true,
-                    reportDir: 'coverage',
-                    reportFiles: 'index.html',
-                    reportName: 'Coverage Report'
-                ]
+
 
             }
         }
