@@ -48,12 +48,16 @@ pipeline {
                 sh 'rm -rf *'
      
                 checkout scm
-
-                sh 'npm install'
-                sh 'npm version $NPM_VERSION_NUMBER'
-                sh 'npm run lint'
-                sh 'npm run test'
-
+                
+                nodejs(nodeJSInstallationName: 'Node') {
+	                sh 'npm install'
+	                sh 'npm version $NPM_VERSION_NUMBER'
+	                sh 'npm run lint'
+	                sh 'npm run test'
+	                sh 'npm run build'
+	                sh 'npm publish'
+                }
+                
                 publishHTML target: [
                     allowMissing: false,
                     alwaysLinkToLastBuild: false,
@@ -63,8 +67,6 @@ pipeline {
                     reportName: 'Coverage Report'
                 ]
 
-                sh 'npm run build'
-                sh 'npm publish'
             }
         }
     }
