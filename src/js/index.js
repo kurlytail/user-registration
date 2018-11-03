@@ -1,4 +1,4 @@
-import reducers from './reducers';
-import components from './components';
+import { RegistrationReducer } from './reducers';
+import { RegistrationForm } from './components';
 
-export { reducers, components };
+export { RegistrationReducer, RegistrationForm };

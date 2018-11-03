@@ -66,8 +66,6 @@ pipeline {
 	                sh 'npm run build'
 	                sh 'npm publish'
                 }
-
-
             }
         }
     }
