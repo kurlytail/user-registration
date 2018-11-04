@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const webpack = require('webpack');
 const chalk = require('chalk');
+const nodeExternals = require('webpack-node-externals');
 const CircularDependencyPlugin = require('circular-dependency-plugin');
 const UglifyEsPlugin = require('uglify-es-webpack-plugin');
 
@@ -117,7 +118,9 @@ const config = {
         extensions: ['.js', '.jsx']
     },
 
-    target: 'node'
+    target: 'node',
+
+    externals: [nodeExternals()]
 };
 
 if (isProd) {
