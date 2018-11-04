@@ -24,7 +24,7 @@ const config = {
         filename: `[name]${isDist}.js`,
         path: distPath,
         pathinfo: !isProd,
-        libraryTarget: 'var'
+        libraryTarget: 'umd'
     },
 
     devtool: 'inline-source-map',
@@ -117,7 +117,7 @@ const config = {
         extensions: ['.js', '.jsx']
     },
 
-    target: 'node',
+    target: 'node'
 };
 
 if (isProd) {

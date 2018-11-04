@@ -15,4 +15,4 @@ class RegistrationReducer {
     }
 }
 
-export default RegistrationReducer;
+export RegistrationReducer;
