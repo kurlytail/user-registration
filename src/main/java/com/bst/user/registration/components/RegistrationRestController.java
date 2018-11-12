@@ -21,20 +21,25 @@ import com.bst.utility.services.EmailService;
 public class RegistrationRestController {
 
 	@Autowired
-	private RegistrationService registrationService;
+	private CaptchaSettings captchaSettings;
 
 	@Autowired
-	private CaptchaSettings captchaSettings;
+	private EmailService emailService;
 
 	@Autowired
 	private Environment environment;
 
 	@Autowired
-	private EmailService emailService;
+	private RegistrationService registrationService;
 
 	@DeleteMapping
 	public void completeRegistration(final @Validated UserRegistrationCompleteDTO userDTO) {
 		this.registrationService.completeRegistration(userDTO);
+	}
+
+	@PostMapping("/confirm")
+	public void confirmUserRegistration(final @Validated UserRegistrationCompleteDTO completeDto) throws Exception {
+		this.registrationService.completeRegistration(completeDto);
 	}
 
 	@GetMapping

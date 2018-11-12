@@ -1,0 +1,14 @@
+{
+  "testRegistrationPost" : [ [ null ], { }, { }, "Continue your registration", "user", {
+    "createdDate" : 1542059308267
+  }, "en" ],
+  "testRegistrationGet" : [ {
+    "captchaKey" : "test captcha key"
+  } ],
+  "testConfirmationPost" : [ {
+    "email" : "john@doe.com",
+    "name" : "John Doe",
+    "password" : "password",
+    "confirmPassword" : "password"
+  } ]
+}

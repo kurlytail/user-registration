@@ -1,0 +1,426 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`# confirmation-form ## constructor ### should create default object 1`] = `
+<form
+  className="auth-form"
+  encType="utf8"
+  id="user-registration-form"
+  method="POST"
+>
+  <div
+    className="form-group"
+  >
+    <div
+      className="form-label-group"
+    >
+      <label>
+        email
+      </label>
+      <input
+        className="form-control"
+        id="user-registration-email"
+        readonly={true}
+        type="email"
+        value="test-email"
+      />
+    </div>
+    <div
+      className="form-label-group"
+    >
+      <label>
+        Name
+      </label>
+      <input
+        autoFocus={true}
+        className="form-control"
+        id="user-registration-name"
+        onChange={[Function]}
+        required={true}
+        type="text"
+      />
+    </div>
+    <div
+      className="form-label-group"
+    >
+      <label>
+        Password
+      </label>
+      <input
+        autoFocus={true}
+        className="form-control"
+        id="user-registration-password"
+        onChange={[Function]}
+        required={true}
+        type="password"
+      />
+    </div>
+    <div
+      className="form-label-group"
+    >
+      <label>
+        Confirm Password
+      </label>
+      <input
+        autoFocus={true}
+        className="form-control"
+        id="user-registration-confirmPassword"
+        onChange={[Function]}
+        required={true}
+        type="password"
+      />
+    </div>
+  </div>
+  <div
+    className="form-group"
+  >
+    <button
+      className="btn btn-lg btn-primary btn-block"
+      id="signup-button"
+      onClick={[Function]}
+      type="submit"
+    >
+      Confirm Registration
+    </button>
+  </div>
+</form>
+`;
+
+exports[`# confirmation-form ## render ### render submit methods 1`] = `
+<form
+  className="auth-form"
+  encType="utf8"
+  id="user-registration-form"
+  method="POST"
+>
+  <div
+    className="form-group"
+  >
+    <div
+      className="form-label-group"
+    >
+      <label>
+        email
+      </label>
+      <input
+        className="form-control"
+        id="user-registration-email"
+        readonly={true}
+        type="email"
+        value="test-email"
+      />
+    </div>
+    <div
+      className="form-label-group"
+    >
+      <label>
+        Name
+      </label>
+      <input
+        autoFocus={true}
+        className="form-control"
+        id="user-registration-name"
+        onChange={[Function]}
+        required={true}
+        type="text"
+      />
+    </div>
+    <div
+      className="form-label-group"
+    >
+      <label>
+        Password
+      </label>
+      <input
+        autoFocus={true}
+        className="form-control"
+        id="user-registration-password"
+        onChange={[Function]}
+        required={true}
+        type="password"
+      />
+    </div>
+    <div
+      className="form-label-group"
+    >
+      <label>
+        Confirm Password
+      </label>
+      <input
+        autoFocus={true}
+        className="form-control"
+        id="user-registration-confirmPassword"
+        onChange={[Function]}
+        required={true}
+        type="password"
+      />
+    </div>
+  </div>
+  <div
+    className="form-group"
+  >
+    <button
+      className="btn btn-lg btn-primary btn-block"
+      id="signup-button"
+      onClick={[Function]}
+      type="submit"
+    >
+      Confirm Registration
+    </button>
+  </div>
+</form>
+`;
+
+exports[`# confirmation-form ## render ### render with different states 1`] = `
+<form
+  className="auth-form"
+  encType="utf8"
+  id="user-registration-form"
+  method="POST"
+>
+  <div
+    className="form-group"
+  >
+    <div
+      className="form-label-group"
+    >
+      <label>
+        email
+      </label>
+      <input
+        className="form-control"
+        id="user-registration-email"
+        readonly={true}
+        type="email"
+        value="test-email"
+      />
+    </div>
+    <div
+      className="form-label-group"
+    >
+      <label>
+        Name
+      </label>
+      <input
+        autoFocus={true}
+        className="form-control"
+        id="user-registration-name"
+        onChange={[Function]}
+        required={true}
+        type="text"
+      />
+    </div>
+    <div
+      className="form-label-group"
+    >
+      <label>
+        Password
+      </label>
+      <input
+        autoFocus={true}
+        className="form-control"
+        id="user-registration-password"
+        onChange={[Function]}
+        required={true}
+        type="password"
+      />
+    </div>
+    <div
+      className="form-label-group"
+    >
+      <label>
+        Confirm Password
+      </label>
+      <input
+        autoFocus={true}
+        className="form-control"
+        id="user-registration-confirmPassword"
+        onChange={[Function]}
+        required={true}
+        type="password"
+      />
+    </div>
+  </div>
+  <div
+    className="form-group"
+  >
+    <button
+      className="btn btn-lg btn-primary btn-block"
+      id="signup-button"
+      onClick={[Function]}
+      type="submit"
+    >
+      Confirm Registration
+    </button>
+  </div>
+</form>
+`;
+
+exports[`# confirmation-form ## render ### render with form methods 1`] = `
+<form
+  className="auth-form"
+  encType="utf8"
+  id="user-registration-form"
+  method="POST"
+>
+  <div
+    className="form-group"
+  >
+    <div
+      className="form-label-group"
+    >
+      <label>
+        email
+      </label>
+      <input
+        className="form-control"
+        id="user-registration-email"
+        readonly={true}
+        type="email"
+        value="test-email"
+      />
+    </div>
+    <div
+      className="form-label-group"
+    >
+      <label>
+        Name
+      </label>
+      <input
+        autoFocus={true}
+        className="form-control"
+        id="user-registration-name"
+        onChange={[Function]}
+        required={true}
+        type="text"
+      />
+    </div>
+    <div
+      className="form-label-group"
+    >
+      <label>
+        Password
+      </label>
+      <input
+        autoFocus={true}
+        className="form-control"
+        id="user-registration-password"
+        onChange={[Function]}
+        required={true}
+        type="password"
+      />
+    </div>
+    <div
+      className="form-label-group"
+    >
+      <label>
+        Confirm Password
+      </label>
+      <input
+        autoFocus={true}
+        className="form-control"
+        id="user-registration-confirmPassword"
+        onChange={[Function]}
+        required={true}
+        type="password"
+      />
+    </div>
+  </div>
+  <div
+    className="form-group"
+  >
+    <button
+      className="btn btn-lg btn-primary btn-block"
+      id="signup-button"
+      onClick={[Function]}
+      type="submit"
+    >
+      Confirm Registration
+    </button>
+  </div>
+</form>
+`;
+
+exports[`# confirmation-form ## render ### render with form methods 2`] = `
+<form
+  className="auth-form"
+  encType="utf8"
+  id="user-registration-form"
+  method="POST"
+>
+  <div
+    className="form-group"
+  >
+    <div
+      className="form-label-group"
+    >
+      <label>
+        email
+      </label>
+      <input
+        className="form-control"
+        id="user-registration-email"
+        readonly={true}
+        type="email"
+        value="test-email"
+      />
+    </div>
+    <div
+      className="form-label-group"
+    >
+      <label>
+        Name
+      </label>
+      <input
+        autoFocus={true}
+        className="form-control"
+        id="user-registration-name"
+        onChange={[Function]}
+        required={true}
+        type="text"
+      />
+    </div>
+    <div
+      className="form-label-group"
+    >
+      <label>
+        Password
+      </label>
+      <input
+        autoFocus={true}
+        className="form-control"
+        id="user-registration-password"
+        onChange={[Function]}
+        required={true}
+        type="password"
+      />
+    </div>
+    <div
+      className="form-label-group"
+    >
+      <label>
+        Confirm Password
+      </label>
+      <input
+        autoFocus={true}
+        className="form-control"
+        id="user-registration-confirmPassword"
+        onChange={[Function]}
+        required={true}
+        type="password"
+      />
+    </div>
+  </div>
+  <div
+    className="form-group"
+  >
+    <button
+      className="btn btn-lg btn-primary btn-block"
+      id="signup-button"
+      onClick={[Function]}
+      type="submit"
+    >
+      Confirm Registration
+    </button>
+  </div>
+</form>
+`;

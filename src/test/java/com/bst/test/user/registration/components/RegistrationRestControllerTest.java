@@ -6,6 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
+import org.mockito.ArgumentMatchers;
 import org.mockito.Captor;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,7 +36,7 @@ import com.bst.utility.testlib.SnapshotListener;
 @DataJpaTest
 @ContextConfiguration(classes = { TestAppConfiguration.class })
 class RegistrationRestControllerTest {
-	
+
 	@TestConfiguration
 	public static class RegistrationRestControllerTestConfiguration {
 		@Bean
@@ -43,44 +44,68 @@ class RegistrationRestControllerTest {
 			return new RegistrationRestController();
 		}
 	}
-	
+
 	@MockBean
 	private ReCaptchaService captchaService;
 
 	@MockBean
-	private RegistrationService registrationService;
-
-	@MockBean
 	private CaptchaSettings captchaSettings;
 
-	@MockBean
-	private Environment environment;
+	@Captor
+	ArgumentCaptor<RegistrationToken> dto;
+
+	@Captor
+	ArgumentCaptor<String> dtoName;
+
+	@Captor
+	ArgumentCaptor<String> emailCaptor;
 
 	@MockBean
 	private EmailService emailService;
 
-	@Autowired
-	private RegistrationRestController restController;
+	@MockBean
+	private Environment environment;
 
-	@Captor
-	ArgumentCaptor<String[]> recepients;
-	@Captor
-	ArgumentCaptor<String> template;
 	@Captor
 	ArgumentCaptor<String> from;
 	@Captor
-	ArgumentCaptor<String> subject;
-	@Captor
-	ArgumentCaptor<String> dtoName;
-	@Captor
-	ArgumentCaptor<RegistrationToken> dto;
-	@Captor
 	ArgumentCaptor<Locale> locale;
-	
+	@Captor
+	ArgumentCaptor<String> nameCaptor;
+	@Captor
+	ArgumentCaptor<String> passwordCaptor;
+	@Captor
+	ArgumentCaptor<String[]> recepients;
+	@Captor
+	ArgumentCaptor<UserRegistrationCompleteDTO> registrationCompleteDTOCaptor;
+	@MockBean
+	private RegistrationService registrationService;
+	@Autowired
+	private RegistrationRestController restController;
+	@Captor
+	ArgumentCaptor<String> subject;
+
+	@Captor
+	ArgumentCaptor<String> template;
+
 	@BeforeEach
 	public void setup() {
-		Mockito.when(captchaSettings.getKey()).thenReturn("test captcha key");
-		Mockito.when(registrationService.commitToken(Mockito.any(UserRegistrationDTO.class))).thenReturn(new RegistrationToken());
+		Mockito.when(this.captchaSettings.getKey()).thenReturn("test captcha key");
+		Mockito.when(this.registrationService.commitToken(ArgumentMatchers.any(UserRegistrationDTO.class)))
+				.thenReturn(new RegistrationToken());
+	}
+
+	@Test
+	public void testConfirmationPost() throws Exception {
+		final UserRegistrationCompleteDTO completeDTO = new UserRegistrationCompleteDTO();
+		completeDTO.setEmail("john@doe.com");
+		completeDTO.setPassword("password");
+		completeDTO.setName("John Doe");
+		completeDTO.setConfirmPassword("password");
+		this.restController.confirmUserRegistration(completeDTO);
+
+		Mockito.verify(this.registrationService).completeRegistration(this.registrationCompleteDTOCaptor.capture());
+		SnapshotListener.expect(this.registrationCompleteDTOCaptor.getValue()).toMatchSnapshot();
 	}
 
 	@Test
