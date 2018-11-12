@@ -19,7 +19,7 @@ exports[`# confirmation-form ## constructor ### should create default object 1`]
       <input
         className="form-control"
         id="user-registration-email"
-        readonly={true}
+        readOnly={true}
         type="email"
         value="test-email"
       />
@@ -104,7 +104,7 @@ exports[`# confirmation-form ## render ### render submit methods 1`] = `
       <input
         className="form-control"
         id="user-registration-email"
-        readonly={true}
+        readOnly={true}
         type="email"
         value="test-email"
       />
@@ -189,7 +189,7 @@ exports[`# confirmation-form ## render ### render with different states 1`] = `
       <input
         className="form-control"
         id="user-registration-email"
-        readonly={true}
+        readOnly={true}
         type="email"
         value="test-email"
       />
@@ -274,7 +274,7 @@ exports[`# confirmation-form ## render ### render with form methods 1`] = `
       <input
         className="form-control"
         id="user-registration-email"
-        readonly={true}
+        readOnly={true}
         type="email"
         value="test-email"
       />
@@ -292,6 +292,7 @@ exports[`# confirmation-form ## render ### render with form methods 1`] = `
         onChange={[Function]}
         required={true}
         type="text"
+        value="test-name"
       />
     </div>
     <div
@@ -359,7 +360,7 @@ exports[`# confirmation-form ## render ### render with form methods 2`] = `
       <input
         className="form-control"
         id="user-registration-email"
-        readonly={true}
+        readOnly={true}
         type="email"
         value="test-email"
       />
@@ -377,6 +378,7 @@ exports[`# confirmation-form ## render ### render with form methods 2`] = `
         onChange={[Function]}
         required={true}
         type="text"
+        value="test-name"
       />
     </div>
     <div
@@ -407,6 +409,7 @@ exports[`# confirmation-form ## render ### render with form methods 2`] = `
         onChange={[Function]}
         required={true}
         type="password"
+        value="test-name"
       />
     </div>
   </div>

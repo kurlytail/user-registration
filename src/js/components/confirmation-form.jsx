@@ -38,8 +38,8 @@ class RegistrationConfirmationForm extends Component {
                             type="email"
                             className="form-control"
                             id="user-registration-email"
-                            readonly
-                            value={this.props.email}
+                            readOnly
+                            value={this.state.email}
                         />
                     </div>
                     <div className="form-label-group">
@@ -51,7 +51,7 @@ class RegistrationConfirmationForm extends Component {
                             autoFocus
                             id="user-registration-name"
                             onChange={event => this.handleName(event)}
-                            value={this.props.name}
+                            value={this.state.name}
                         />
                         {fieldErrors.map(
                             errorItem =>
@@ -73,7 +73,7 @@ class RegistrationConfirmationForm extends Component {
                             autoFocus
                             id="user-registration-password"
                             onChange={event => this.handlePassword(event)}
-                            value={this.props.password}
+                            value={this.state.password}
                         />
                         {fieldErrors.map(
                             errorItem =>
@@ -95,7 +95,7 @@ class RegistrationConfirmationForm extends Component {
                             autoFocus
                             id="user-registration-confirmPassword"
                             onChange={event => this.handleConfirmPassword(event)}
-                            value={this.props.confirmPassword}
+                            value={this.state.confirmPassword}
                         />
                         {fieldErrors.map(
                             errorItem =>
