@@ -7,7 +7,10 @@ class RegistrationReducer {
         const { actions, rootReducer } = createResource({
             name: 'registration',
             pluralName: 'registration',
-            url: '/api/registration'
+            url: '/api/registration',
+            actions: {
+                confirm: { method: 'POST', url: './confirm' }
+            }
         });
 
         this.reducer = rootReducer;
