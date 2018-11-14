@@ -7,7 +7,7 @@ jest.mock('react-google-recaptcha');
 
 const FIXTURES = {
     actions: {
-        confirmRegistration: jest.fn()
+        deleteRegistration: jest.fn()
     },
 
     nullState: null,
@@ -99,7 +99,7 @@ describe('# confirmation-form', () => {
             instance.onSubmit(FIXTURES.submitEvent);
 
             expect(component.toJSON()).toMatchSnapshot();
-            expect(FIXTURES.actions.confirmRegistration).toBeCalled();
+            expect(FIXTURES.actions.deleteRegistration).toBeCalled();
             expect(FIXTURES.submitEvent.preventDefault).toBeCalled();
         });
     });

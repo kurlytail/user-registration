@@ -1,0 +1,5 @@
+{
+  "testRegistrationStates" : [ "OK", {
+    "captchaKey" : "test captcha key"
+  }, "OK", { }, "OK", { } ]
+}

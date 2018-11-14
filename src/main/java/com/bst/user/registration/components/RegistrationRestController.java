@@ -17,7 +17,7 @@ import com.bst.user.registration.entities.RegistrationToken;
 import com.bst.utility.configuration.CaptchaSettings;
 import com.bst.utility.services.EmailService;
 
-@RestController("/registration")
+@RestController("/auth/registration")
 public class RegistrationRestController {
 
 	@Autowired
@@ -33,15 +33,10 @@ public class RegistrationRestController {
 	private RegistrationService registrationService;
 
 	@DeleteMapping
-	public void completeRegistration(final @Validated UserRegistrationCompleteDTO userDTO) {
+	public void completeRegistration(final @Validated @RequestBody UserRegistrationCompleteDTO userDTO) {
 		this.registrationService.completeRegistration(userDTO);
 	}
-
-	@PostMapping("/confirm")
-	public void confirmUserRegistration(final @Validated UserRegistrationCompleteDTO completeDto) throws Exception {
-		this.registrationService.completeRegistration(completeDto);
-	}
-
+	
 	@GetMapping
 	public UserRegistrationDTO getMapping() {
 		final UserRegistrationDTO userDTO = new UserRegistrationDTO();

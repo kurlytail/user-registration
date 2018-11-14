@@ -96,19 +96,6 @@ class RegistrationRestControllerTest {
 	}
 
 	@Test
-	public void testConfirmationPost() throws Exception {
-		final UserRegistrationCompleteDTO completeDTO = new UserRegistrationCompleteDTO();
-		completeDTO.setEmail("john@doe.com");
-		completeDTO.setPassword("password");
-		completeDTO.setName("John Doe");
-		completeDTO.setConfirmPassword("password");
-		this.restController.confirmUserRegistration(completeDTO);
-
-		Mockito.verify(this.registrationService).completeRegistration(this.registrationCompleteDTOCaptor.capture());
-		SnapshotListener.expect(this.registrationCompleteDTOCaptor.getValue()).toMatchSnapshot();
-	}
-
-	@Test
 	public void testRegistrationDelete() throws Exception {
 		final UserRegistrationCompleteDTO userDTO = new UserRegistrationCompleteDTO();
 		this.restController.completeRegistration(userDTO);

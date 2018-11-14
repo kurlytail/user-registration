@@ -22,7 +22,7 @@ class RegistrationConfirmationForm extends Component {
 
     onSubmit(e) {
         e.preventDefault();
-        this.props.actions.confirmRegistration({ ...this.state });
+        this.props.actions.deleteRegistration({ ...this.state });
     }
 
     render() {

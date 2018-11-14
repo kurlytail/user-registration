@@ -8,7 +8,9 @@ import org.springframework.stereotype.Component;
 public class SecurityDisabler extends WebSecurityConfigurerAdapter {
 
 	@Override
-	protected void configure(HttpSecurity http) throws Exception {
+	protected void configure(final HttpSecurity http) throws Exception {
 		http.authorizeRequests().antMatchers("/").permitAll();
+
+		http.csrf().disable();
 	}
 }
