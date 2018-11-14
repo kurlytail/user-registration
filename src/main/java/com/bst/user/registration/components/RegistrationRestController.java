@@ -17,7 +17,7 @@ import com.bst.user.registration.entities.RegistrationToken;
 import com.bst.utility.configuration.CaptchaSettings;
 import com.bst.utility.services.EmailService;
 
-@RestController("/auth/registration")
+@RestController("/registration")
 public class RegistrationRestController {
 
 	@Autowired
