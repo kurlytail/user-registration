@@ -46,7 +46,6 @@ exports[`# confirmation-form ## constructor ### should create default object 1`]
         Password
       </label>
       <input
-        autoFocus={true}
         className="form-control"
         id="user-registration-password"
         onChange={[Function]}
@@ -61,7 +60,6 @@ exports[`# confirmation-form ## constructor ### should create default object 1`]
         Confirm Password
       </label>
       <input
-        autoFocus={true}
         className="form-control"
         id="user-registration-confirmPassword"
         onChange={[Function]}
@@ -131,7 +129,6 @@ exports[`# confirmation-form ## render ### render submit methods 1`] = `
         Password
       </label>
       <input
-        autoFocus={true}
         className="form-control"
         id="user-registration-password"
         onChange={[Function]}
@@ -146,7 +143,6 @@ exports[`# confirmation-form ## render ### render submit methods 1`] = `
         Confirm Password
       </label>
       <input
-        autoFocus={true}
         className="form-control"
         id="user-registration-confirmPassword"
         onChange={[Function]}
@@ -216,7 +212,6 @@ exports[`# confirmation-form ## render ### render with different states 1`] = `
         Password
       </label>
       <input
-        autoFocus={true}
         className="form-control"
         id="user-registration-password"
         onChange={[Function]}
@@ -231,7 +226,6 @@ exports[`# confirmation-form ## render ### render with different states 1`] = `
         Confirm Password
       </label>
       <input
-        autoFocus={true}
         className="form-control"
         id="user-registration-confirmPassword"
         onChange={[Function]}
@@ -302,7 +296,6 @@ exports[`# confirmation-form ## render ### render with form methods 1`] = `
         Password
       </label>
       <input
-        autoFocus={true}
         className="form-control"
         id="user-registration-password"
         onChange={[Function]}
@@ -317,7 +310,6 @@ exports[`# confirmation-form ## render ### render with form methods 1`] = `
         Confirm Password
       </label>
       <input
-        autoFocus={true}
         className="form-control"
         id="user-registration-confirmPassword"
         onChange={[Function]}
@@ -388,7 +380,6 @@ exports[`# confirmation-form ## render ### render with form methods 2`] = `
         Password
       </label>
       <input
-        autoFocus={true}
         className="form-control"
         id="user-registration-password"
         onChange={[Function]}
@@ -403,7 +394,6 @@ exports[`# confirmation-form ## render ### render with form methods 2`] = `
         Confirm Password
       </label>
       <input
-        autoFocus={true}
         className="form-control"
         id="user-registration-confirmPassword"
         onChange={[Function]}

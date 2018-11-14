@@ -70,7 +70,6 @@ class RegistrationConfirmationForm extends Component {
                             type="password"
                             className="form-control"
                             required
-                            autoFocus
                             id="user-registration-password"
                             onChange={event => this.handlePassword(event)}
                             value={this.state.password}
@@ -92,7 +91,6 @@ class RegistrationConfirmationForm extends Component {
                             type="password"
                             className="form-control"
                             required
-                            autoFocus
                             id="user-registration-confirmPassword"
                             onChange={event => this.handleConfirmPassword(event)}
                             value={this.state.confirmPassword}
