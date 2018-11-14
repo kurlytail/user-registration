@@ -110,7 +110,9 @@
         "moduleDirectories": [
             "node_modules"
         ],
-        "roots": [ "src/js" ],
+        "roots": [
+            "src/js"
+        ],
         "collectCoverage": true,
         "coverageReporters": [
             "text",
