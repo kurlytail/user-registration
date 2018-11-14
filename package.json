@@ -108,9 +108,9 @@
     "jest": {
         "testResultsProcessor": "./node_modules/jest-junit-reporter",
         "moduleDirectories": [
-            "node_modules",
-            "./src/js"
+            "node_modules"
         ],
+        "roots": [ "src/js" ],
         "collectCoverage": true,
         "coverageReporters": [
             "text",

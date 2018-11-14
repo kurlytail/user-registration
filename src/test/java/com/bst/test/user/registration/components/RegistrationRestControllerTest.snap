@@ -1,6 +1,6 @@
 {
   "testRegistrationPost" : [ [ null ], { }, { }, "Continue your registration", "user", {
-    "createdDate" : 1542211652881
+    "createdDate" : 1542229127776
   }, "en" ],
   "testRegistrationGet" : [ {
     "captchaKey" : "test captcha key"
