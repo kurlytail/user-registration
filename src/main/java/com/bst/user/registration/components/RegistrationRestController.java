@@ -19,7 +19,7 @@ import com.bst.utility.configuration.CaptchaSettings;
 import com.bst.utility.services.EmailService;
 
 @RestController
-@RequestMapping("/registration")
+@RequestMapping("registration")
 public class RegistrationRestController {
 
 	@Autowired
