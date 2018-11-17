@@ -19,7 +19,7 @@ import com.bst.utility.configuration.CaptchaSettings;
 import com.bst.utility.services.EmailService;
 
 @RestController
-@RequestMapping("registration")
+@RequestMapping("${spring.data.rest.base-path}/registration")
 public class RegistrationRestController {
 
 	@Autowired
