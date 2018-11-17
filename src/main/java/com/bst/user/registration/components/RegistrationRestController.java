@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bst.user.registration.dto.UserRegistrationCompleteDTO;
@@ -17,7 +18,8 @@ import com.bst.user.registration.entities.RegistrationToken;
 import com.bst.utility.configuration.CaptchaSettings;
 import com.bst.utility.services.EmailService;
 
-@RestController("/registration")
+@RestController
+@RequestMapping("/registration")
 public class RegistrationRestController {
 
 	@Autowired
