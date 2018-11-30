@@ -122,6 +122,9 @@ class RegistrationRestControllerTest {
 		SnapshotListener.expect(this.from.getValue()).toMatchSnapshot();
 		SnapshotListener.expect(this.subject.getValue()).toMatchSnapshot();
 		SnapshotListener.expect(this.dtoName.getValue()).toMatchSnapshot();
+		
+		RegistrationToken responseDto = this.dto.getValue();
+		responseDto.setCreatedDate(null);
 		SnapshotListener.expect(this.dto.getValue()).toMatchSnapshot();
 		SnapshotListener.expect(this.locale.getValue()).toMatchSnapshot();
 	}

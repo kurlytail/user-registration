@@ -22,18 +22,18 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 @Entity
 public class RegistrationToken {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
-
 	@Temporal(TemporalType.DATE)
-	private final Date createdDate = new Date();
+	private Date createdDate = new Date();
 
 	@Column(unique = true)
 	private final String email;
 
 	@Transient
 	private String hash;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
 
 	public RegistrationToken() {
 		this.email = null;
@@ -91,8 +91,12 @@ public class RegistrationToken {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((this.email == null) ? 0 : this.email.hashCode());
+		result = (prime * result) + ((this.email == null) ? 0 : this.email.hashCode());
 		return result;
+	}
+
+	public void setCreatedDate(final Date createdDate) {
+		this.createdDate = createdDate;
 	}
 
 	@Override
