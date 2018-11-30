@@ -9,7 +9,7 @@ pipeline {
     
     triggers {
         snapshotDependencies()
-        upstream(upstreamProjects: [ 'kurlytail/utility-lib/master', 'kurlytail/user-authentication/master' ], threshold: hudson.model.Result.SUCCESS)
+        upstream(upstreamProjects: 'kurlytail/utility-lib/master,kurlytail/user-authentication/master', threshold: hudson.model.Result.SUCCESS)
     }
 
     stages {
