@@ -6,6 +6,11 @@ pipeline {
         string(defaultValue: "0.0", description: 'Build version prefix', name: 'BUILD_VERSION_PREFIX')
         string(defaultValue: "", description: 'Build number offset', name: 'BUILDS_OFFSET')
     }
+    
+    triggers {
+        snapshotDependencies()
+        upstream(upstreamProjects: [ 'kurlytail/utility-lib/master', 'kurlytail/user-authentication/master' ], threshold: hudson.model.Result.SUCCESS)
+    }
 
     stages {
         stage('Prepare env') {
